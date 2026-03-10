@@ -5,7 +5,7 @@ features:
   - aerodromes
   - ports
   - crossings
-#  - roads
+  - roads
 
 tags:
   - geodata

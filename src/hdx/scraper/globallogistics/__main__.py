@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 _LOOKUP = "hdx-scraper-globallogistics"
 _SAVED_DATA_DIR = "saved_data"  # Keep in repo to avoid deletion in /tmp
-_UPDATED_BY_SCRIPT = "HDX Scraper: Globallogistics"
+_UPDATED_BY_SCRIPT = "HDX Scraper: Global Logistics"
 
 
 def main(
@@ -75,7 +75,6 @@ def main(
                     dataset.create_in_hdx(
                         remove_additional_resources=True,
                         match_resource_order=False,
-                        hxl_update=False,
                         updated_by_script=_UPDATED_BY_SCRIPT,
                         batch=info["batch"],
                     )

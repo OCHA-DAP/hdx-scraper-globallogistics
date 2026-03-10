@@ -69,7 +69,7 @@ class Pipeline:
         dataset.set_subnational(True)
 
         base_url = self._configuration["base_url"]
-        url = f"{base_url}{feature}?iso3={countryiso}&f=geojson&pageSize=1000"
+        url = f"{base_url}{feature}?iso3={countryiso}&f=geojson&pageSize=500"
         filename = f"{countryiso}_{feature}.geojson"
         try:
             path = self._retriever.download_file(url, filename=filename)
@@ -77,12 +77,16 @@ class Pipeline:
                 return None
             json = load_json(path)
             if len(json["features"]) == 0:
+                logger.warning(
+                    f"No features in returned geojson for {feature} in {countryiso}!"
+                )
                 return None
             resource = Resource({"name": filename, "description": dataset_title})
             resource.set_format("geojson")
             resource.set_file_to_upload(path)
             dataset.add_update_resource(resource)
-        except DownloadError:
+        except DownloadError as ex:
+            logger.exception(ex)
             return None
         return dataset
 
