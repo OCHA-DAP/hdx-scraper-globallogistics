@@ -55,8 +55,6 @@ class TestPipeline:
                     "description": "Angola: Global Logistics Geodata for aerodromes",
                     "format": "geojson",
                     "name": "AGO_aerodromes.geojson",
-                    "resource_type": "file.upload",
-                    "url_type": "upload",
                 }
 
                 dataset = datasets[1]
@@ -84,8 +82,6 @@ class TestPipeline:
                     "description": "Angola: Global Logistics Geodata for ports",
                     "format": "geojson",
                     "name": "AGO_ports.geojson",
-                    "resource_type": "file.upload",
-                    "url_type": "upload",
                 }
 
                 dataset = datasets[2]
