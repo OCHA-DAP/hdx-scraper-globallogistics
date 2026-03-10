@@ -113,6 +113,4 @@ class TestPipeline:
                     "description": "Angola: Global Logistics Geodata for crossings",
                     "format": "geojson",
                     "name": "AGO_crossings.geojson",
-                    "resource_type": "file.upload",
-                    "url_type": "upload",
                 }
